@@ -9,8 +9,8 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100vh;
-  background: linear-gradient(135deg, #7cd3ff, #e5a4ff);
+  height: 600px;
+  background: rgba(255,255,255,10);
   color: #fff;
   text-align: center;
   padding: 0 1rem;
