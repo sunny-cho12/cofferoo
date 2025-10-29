@@ -1,3 +1,44 @@
+
+/* ===== Header Section ===== */
+.site-header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  border-bottom: 1px solid #eee;
+  position: sticky;   /* 스크롤해도 상단 고정 */
+  top: 0;
+  background: #fff;
+  z-index: 100;
+}
+
+/* 로고 */
+.logo {
+  font-weight: 700;
+  font-size: 1.25rem;
+  color: #7E9260;
+}
+
+/* 메뉴 */
+.nav-menu {
+  display: flex;
+  gap: 1.5rem;
+  font-size: 0.95rem;
+}
+
+.nav-menu a {
+  text-decoration: none;
+  color: #333;
+  transition: color 0.2s ease;
+}
+
+.nav-menu a:hover {
+  color: #7E9260;
+}
+
+
+
 * { box-sizing: border-box; }
 body {
   margin: 0;
