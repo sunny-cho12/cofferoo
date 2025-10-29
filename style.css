@@ -7,34 +7,46 @@
   align-items: center;
   padding: 1rem 2rem;
   border-bottom: 1px solid #eee;
-  position: sticky;   /* 스크롤해도 상단 고정 */
+  position: sticky;
   top: 0;
   background: #fff;
   z-index: 100;
 }
 
-/* 로고 */
 .logo {
   font-weight: 700;
   font-size: 1.25rem;
   color: #7E9260;
 }
 
-/* 메뉴 */
-.nav-menu {
-  display: flex;
-  gap: 1.5rem;
-  font-size: 0.95rem;
-}
-
-.nav-menu a {
+.contact-btn {
+  display: inline-block;
+  padding: 0.5rem 1.25rem;
+  background: #7E9260;
+  color: #fff;
+  border-radius: 0.5rem;
   text-decoration: none;
-  color: #333;
-  transition: color 0.2s ease;
+  font-weight: 600;
+  transition: background 0.2s ease;
 }
 
-.nav-menu a:hover {
-  color: #7E9260;
+.contact-btn:hover {
+  background: #67804f;
+}
+
+@media (max-width: 600px) {
+  .site-header {
+    padding: 0.75rem 1rem;
+  }
+
+  .logo {
+    font-size: 1.1rem;
+  }
+
+  .contact-btn {
+    padding: 0.4rem 1rem;
+    font-size: 0.9rem;
+  }
 }
 
 
