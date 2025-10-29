@@ -101,11 +101,19 @@ body {
   background: #f9f9f9;
   padding: 4rem 1.5rem;
 }
+
 .how-it-works .steps {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 2rem;
 }
+
+.calculation {
+  padding: 4rem 1.5rem;
+  text-align: center;
+}
+
+
 .step h3 { font-size: 1.5rem; margin-bottom: .5rem; }
 .site-footer {
   padding: 2rem 1rem;
