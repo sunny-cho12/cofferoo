@@ -627,8 +627,7 @@ footer {
   }
 }
 
-
-.video.video-section {
+.video-section {
   background-color: #f9f7f1; /* 전체 배경색 사이트 톤에 맞춤 */
   padding: 3rem 2rem;
   display: flex;
