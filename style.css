@@ -110,58 +110,73 @@ body {
   margin-bottom: 2.5rem;
   color: #111;
 }
+/* ===== Consulting Section ===== */
+.consulting-section {
+  background: #f9f7f1;
+  padding: 4rem clamp(1rem, 5vw, 6rem); /* ✅ 반응형 패딩 */
+  text-align: center;
+}
 
-/* 카드 그리드 */
+/* 제목 */
+.consulting-section h2 {
+  font-size: clamp(1.4rem, 2vw, 1.8rem); /* ✅ 글씨 자동 축소 */
+  margin-bottom: 2.5rem;
+  color: #111;
+}
+
+/* 카드 컨테이너 */
 .consulting-grid {
   display: flex;
   justify-content: center;
-  gap: 2rem;
-  flex-wrap: nowrap; /* 모바일에서도 한 줄 유지 */
-  overflow-x: auto;  /* 모바일 화면이 좁으면 가로 스크롤 */
+  gap: clamp(1rem, 3vw, 2rem);
+  flex-wrap: nowrap;
+  overflow-x: auto;
   scroll-snap-type: x mandatory;
+  padding: 0 0.5rem; /* ✅ 양옆 여백 균형 */
 }
 
+/* 카드 */
 .consult-card {
-  flex: 0 0 280px; /* 카드 폭 고정 */
+  flex: 0 0 clamp(200px, 28vw, 280px); /* ✅ 화면에 따라 폭 자동 조정 */
   background: #fefdf8;
   border: 1px solid #ddd;
   border-radius: 1rem;
-  padding: 2rem 1.5rem;
+  padding: 2rem 1.2rem;
   text-align: center;
   scroll-snap-align: center;
   box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  transition: transform 0.2s ease;
+}
+
+.consult-card:hover {
+  transform: translateY(-4px);
 }
 
 /* 아이콘 */
 .consult-card .icon {
-  font-size: 2rem;
+  font-size: clamp(1.5rem, 3vw, 2rem); /* ✅ 아이콘도 줄어듦 */
   margin-bottom: 1rem;
 }
 
 /* 제목 */
 .consult-card h3 {
-  font-size: 1.1rem;
-  margin-bottom: 0.75rem;
+  font-size: clamp(1rem, 2vw, 1.1rem);
+  margin-bottom: 0.5rem;
   font-weight: 700;
   color: #111;
 }
 
 /* 설명 */
 .consult-card p {
-  font-size: 0.95rem;
+  font-size: clamp(0.85rem, 1.5vw, 0.95rem);
   color: #444;
   line-height: 1.5;
 }
 
-/* 반응형 */
+/* 모바일에서도 항상 가로 정렬 유지 */
 @media (max-width: 600px) {
-  .consulting-section h2 {
-    font-size: 1.5rem;
-  }
-
-  .consult-card {
-    flex: 0 0 220px;
-    padding: 1.5rem 1rem;
+  .consulting-grid {
+    overflow-x: auto;
   }
 }
 
