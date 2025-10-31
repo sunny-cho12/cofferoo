@@ -14,7 +14,7 @@ body {
   line-height: 1.6;
 }
 
-/* 기본 텍스트 스타일 */
+
 h1, h2, h3, h4, h5, h6 {
   font-weight: 700;
   color: #111;
@@ -628,21 +628,25 @@ footer {
 }
 
 
-.video-wrapper {
+.video.video-section {
+  background-color: #f9f7f1; /* 전체 배경색 사이트 톤에 맞춤 */
+  padding: 3rem 2rem;
   display: flex;
-  justify-content: center;  
-  align-items: center;
-  width: 100%;
-  background: #f9f7f1;        
-  padding: 2rem 0;           
+  justify-content: center;
 }
 
-.video-wrapper video {
-  width: 85%;                 
-  height: auto;
-  max-width: 1280px;          
-  border-radius: 8px;
-  object-fit: contain;        
-  background: #f9f7f1;       
-  box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+.video-container {
+  position: relative;
+  width: 100%;
+  max-width: 960px; /* 가운데 정렬, 양옆 여백 생김 */
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+.video-container iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
 }
