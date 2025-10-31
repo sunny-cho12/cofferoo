@@ -97,16 +97,74 @@ body {
 }
 .stat { font-size: 2rem; }
 .stat .unit { font-size: 1rem; display: block; }
-.how-it-works {
-  background: #f9f9f9;
-  padding: 4rem 1.5rem;
+
+/* ===== Consulting Section ===== */
+.consulting-section {
+  background: #f9f7f1;
+  padding: 4rem 2rem;
+  text-align: center;
 }
 
-.how-it-works .steps {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 2rem;
+.consulting-section h2 {
+  font-size: 1.8rem;
+  margin-bottom: 2.5rem;
+  color: #111;
 }
+
+/* 카드 그리드 */
+.consulting-grid {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: nowrap; /* 모바일에서도 한 줄 유지 */
+  overflow-x: auto;  /* 모바일 화면이 좁으면 가로 스크롤 */
+  scroll-snap-type: x mandatory;
+}
+
+.consult-card {
+  flex: 0 0 280px; /* 카드 폭 고정 */
+  background: #fefdf8;
+  border: 1px solid #ddd;
+  border-radius: 1rem;
+  padding: 2rem 1.5rem;
+  text-align: center;
+  scroll-snap-align: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+/* 아이콘 */
+.consult-card .icon {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+/* 제목 */
+.consult-card h3 {
+  font-size: 1.1rem;
+  margin-bottom: 0.75rem;
+  font-weight: 700;
+  color: #111;
+}
+
+/* 설명 */
+.consult-card p {
+  font-size: 0.95rem;
+  color: #444;
+  line-height: 1.5;
+}
+
+/* 반응형 */
+@media (max-width: 600px) {
+  .consulting-section h2 {
+    font-size: 1.5rem;
+  }
+
+  .consult-card {
+    flex: 0 0 220px;
+    padding: 1.5rem 1rem;
+  }
+}
+
 
 .calculation {
   padding: 4rem 1.5rem;
