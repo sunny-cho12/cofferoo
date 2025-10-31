@@ -126,3 +126,75 @@ body {
   color: #00c1a3;
   text-decoration: none;
 }
+
+/* 전체 레이아웃 */
+.qna-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 3rem;
+  padding: 4rem 2rem;
+  background: #f9f7f1;
+}
+
+/* 왼쪽 소개 */
+.qna-intro {
+  flex: 1;
+  max-width: 40%;
+}
+
+.qna-intro h2 {
+  font-size: 1.75rem;
+  margin-bottom: 1rem;
+}
+
+.qna-intro p {
+  font-size: 1rem;
+  color: #444;
+}
+
+/* 오른쪽 Q&A 목록 */
+.qna-list {
+  flex: 1;
+  max-width: 50%;
+}
+
+/* details 태그 스타일 */
+.qna-list details {
+  border-bottom: 1px solid #ccc;
+  padding: 1rem 0;
+}
+
+.qna-list summary {
+  list-style: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 600;
+  color: #111;
+}
+
+.qna-list summary::marker {
+  display: none;
+}
+
+.qna-list p {
+  margin-top: 0.75rem;
+  color: #333;
+  font-size: 0.95rem;
+}
+
+/* 반응형 (모바일) */
+@media (max-width: 768px) {
+  .qna-section {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .qna-intro,
+  .qna-list {
+    max-width: 100%;
+  }
+}
+
