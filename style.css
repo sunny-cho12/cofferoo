@@ -127,7 +127,6 @@ body {
   text-decoration: none;
 }
 
-/* 전체 레이아웃 */
 .qna-section {
   display: flex;
   justify-content: space-between;
@@ -137,7 +136,6 @@ body {
   background: #f9f7f1;
 }
 
-/* 왼쪽 소개 */
 .qna-intro {
   flex: 1;
   max-width: 40%;
@@ -153,39 +151,50 @@ body {
   color: #444;
 }
 
-/* 오른쪽 Q&A 목록 */
 .qna-list {
   flex: 1;
   max-width: 50%;
 }
 
-/* details 태그 스타일 */
+/* details 스타일 */
 .qna-list details {
   border-bottom: 1px solid #ccc;
   padding: 1rem 0;
 }
 
+/* summary 스타일 */
 .qna-list summary {
   list-style: none;
   cursor: pointer;
   display: flex;
+  justify-content: space-between;
   align-items: center;
-  gap: 0.5rem;
   font-weight: 600;
   color: #111;
 }
 
-.qna-list summary::marker {
-  display: none;
+/* 기본 삼각형 아이콘 */
+.qna-list summary .arrow::before {
+  content: "▸";  /* 오른쪽을 향한 삼각형 */
+  font-size: 1rem;
+  color: #7E9260;
+  transition: transform 0.2s ease;
 }
 
+/* 열렸을 때 아이콘 회전 */
+.qna-list details[open] summary .arrow::before {
+  content: "▾";  /* 아래쪽을 향한 삼각형 */
+  transform: rotate(0deg);
+}
+
+/* 본문 */
 .qna-list p {
   margin-top: 0.75rem;
   color: #333;
   font-size: 0.95rem;
 }
 
-/* 반응형 (모바일) */
+/* 반응형 */
 @media (max-width: 768px) {
   .qna-section {
     flex-direction: column;
@@ -197,4 +206,5 @@ body {
     max-width: 100%;
   }
 }
+
 
