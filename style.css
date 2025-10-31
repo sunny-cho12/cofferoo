@@ -1,5 +1,69 @@
+/* ================================
+   Global Base
+================================ */
 
-/* ===== Header Section ===== */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #fff;
+  color: #222;
+  font-family: "Pretendard", "Inter", "Noto Sans KR", sans-serif;
+  line-height: 1.6;
+}
+
+/* 기본 텍스트 스타일 */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  color: #111;
+  line-height: 1.3;
+  margin-bottom: 0.75rem;
+}
+
+h1 {
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  color: #7e9260;
+}
+
+h2 {
+  font-size: clamp(1.4rem, 3vw, 1.9rem);
+  color: #7e9260;
+}
+
+h3 {
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  color: #333;
+}
+
+p {
+  font-size: 1rem;
+  color: #444;
+  margin-bottom: 1rem;
+}
+
+a {
+  color: #7e9260;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: #5d7148;
+}
+
+@media (max-width: 900px) {
+  h1 { font-size: 2rem; }
+  h2 { font-size: 1.6rem; }
+  h3 { font-size: 1.2rem; }
+  p { font-size: 0.95rem; }
+}
+
+/* ================================
+   Header
+================================ */
+
 .site-header {
   width: 100%;
   display: flex;
@@ -16,13 +80,13 @@
 .logo {
   font-weight: 700;
   font-size: 1.25rem;
-  color: #7E9260;
+  color: #7e9260;
 }
 
 .contact-btn {
   display: inline-block;
   padding: 0.5rem 1.25rem;
-  background: #7E9260;
+  background: #7e9260;
   color: #fff;
   border-radius: 0.5rem;
   text-decoration: none;
@@ -34,264 +98,321 @@
   background: #67804f;
 }
 
-@media (max-width: 600px) {
-  .site-header {
-    padding: 0.75rem 1rem;
-  }
+/* ================================
+   Hero Section
+================================ */
 
-  .logo {
-    font-size: 1.1rem;
-  }
-
-  .contact-btn {
-    padding: 0.4rem 1rem;
-    font-size: 0.9rem;
-  }
-}
-
-
-
-* { box-sizing: border-box; }
-body {
-  margin: 0;
-  font-family: "Pretendard", "Noto Sans KR", sans-serif;
-  color: #222;
-  background: #fff;
-}
 .hero {
   display: flex;
   align-items: center;
   justify-content: center;
   height: 600px;
-  background: rgba(255,255,255,10);
-  color: #7E9260;
+  background: rgba(255, 255, 255, 10);
+  color: #7e9260;
   text-align: center;
   padding: 0 1rem;
 }
+
 .hero-content h1 {
   font-size: 3rem;
   margin-bottom: 0.5rem;
 }
+
 .hero-content p {
   font-size: 1.25rem;
   margin-bottom: 1.5rem;
 }
+
 .btn {
   display: inline-block;
-  padding: .75rem 1.5rem;
+  padding: 0.75rem 1.5rem;
   background: #00c1a3;
   color: #fff;
   text-decoration: none;
-  border-radius: .5rem;
+  border-radius: 0.5rem;
   font-weight: 600;
 }
-.value-prop {
-  padding: 4rem 1.5rem;
+
+/* ================================
+   Common Section Container
+================================ */
+
+.section-container {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+  width: 100%;
+}
+
+/* ================================
+   Consulting Section
+================================ */
+
+.consulting-section {
+  background: #f9f7f1;
+}
+
+.consulting-section .section-container {
   text-align: center;
 }
-.value-prop .stats {
-  display: flex;
-  justify-content: center;
-  gap: 2rem;
-  margin-top: 2rem;
-}
-.stat { font-size: 2rem; }
-.stat .unit { font-size: 1rem; display: block; }
 
-/* ===== 공통 섹션 Wrapper ===== */
-.consulting-wrapper {
-  background: #f9f7f1;
-  padding: 4rem clamp(1rem, 5vw, 6rem);
-  display: flex;
-  flex-direction: column;
-  gap: 5rem;
-}
-
-/* ===== 섹션 제목 ===== */
-.consulting-section h2,
-.qna-intro h2 {
-  font-size: clamp(1.4rem, 2vw, 1.8rem);
-  margin-bottom: 2rem;
-  color: #111;
-  text-align: left;
-}
-
-/* ===== Consulting 카드 섹션 ===== */
 .consulting-grid {
   display: flex;
-  justify-content: space-between;
-  gap: clamp(1rem, 3vw, 2rem);
-  flex-wrap: nowrap;
-  overflow-x: auto;
+  justify-content: center;
+  align-items: stretch;
+  flex-wrap: wrap;
+  gap: 2rem;
+  padding-top: 2em;
 }
 
 .consult-card {
-  flex: 0 0 clamp(200px, 28vw, 280px);
-  background: #fefdf8;
+  flex: 1 1 280px;
+  min-width: 280px;
+  max-width: 320px;
+  background: #fffdfa;
   border: 1px solid #ddd;
   border-radius: 1rem;
   padding: 2rem 1.2rem;
   text-align: center;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
   transition: transform 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
 }
 
 .consult-card:hover {
   transform: translateY(-4px);
 }
 
-.consult-card .icon {
-  font-size: clamp(1.5rem, 3vw, 2rem);
-  margin-bottom: 1rem;
-}
-
 .consult-card h3 {
-  font-size: clamp(1rem, 2vw, 1.1rem);
-  margin-bottom: 0.5rem;
-  font-weight: 700;
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  margin: 1rem 0 0.5rem;
   color: #111;
 }
 
-.consult-card p {
-  font-size: clamp(0.85rem, 1.5vw, 0.95rem);
-  color: #444;
-  line-height: 1.5;
-}
-
-/* ===== Q&A 섹션 ===== */
-.qna-section {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 3rem;
-}
-
-.qna-intro {
-  flex: 1;
-  max-width: 40%;
-}
-
-.qna-intro p {
-  font-size: clamp(0.9rem, 1.5vw, 1rem);
-  color: #444;
-}
-
-/* 오른쪽 리스트 */
-.qna-list {
-  flex: 1;
-  max-width: 50%;
-}
-
-.qna-list details {
-  border-bottom: 1px solid #ccc;
-  padding: 1rem 0;
-}
-
-.qna-list summary {
-  list-style: none;
-  cursor: pointer;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-weight: 600;
-  color: #111;
-  font-size: clamp(0.95rem, 1.5vw, 1.1rem);
-}
-
-.qna-list summary .arrow::before {
-  content: "▸";
-  font-size: 1rem;
-  color: #7E9260;
+.icon svg {
+  width: 48px;
+  height: 48px;
+  fill: #7e9260; /* 아이콘 색상 */
+  margin-bottom: 0.75rem;
   transition: transform 0.2s ease;
 }
 
-.qna-list details[open] summary .arrow::before {
-  content: "▾";
+.consult-card:hover .icon svg {
+  transform: scale(1.1);
 }
 
-.qna-list p {
-  margin-top: 0.75rem;
+#carbon-calculator {
+  background: #dfffef;
+  padding: 4rem 0;
+}
+
+#carbon-calculator .section-container {
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+.calc-container {
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 2.5rem;
+  max-width: 800px;
+  padding-top: 1rem;
+  margin: 0 auto;
+}
+
+.calc-left {
+  width: 100%;
+  max-width: 600px;
+  text-align: left; 
+  margin: 0 auto;
+}
+
+.calc-left h2 {
+  text-align: center;
+  color: #7e9260;
+  margin-bottom: 2rem;
+}
+
+.calc-control label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
   color: #333;
-  font-size: clamp(0.85rem, 1.4vw, 0.95rem);
-  line-height: 1.5;
 }
 
-/* ===== 반응형 ===== */
-@media (max-width: 768px) {
-  .consulting-wrapper {
-    padding: 3rem 1.5rem;
-  }
+/* 슬라이더 */
+.calc-control input[type="range"] {
+  width: 100%;
+  accent-color: #7e9260;
+  height: 12px;
+  border-radius: 3px;
+  cursor: pointer;
+}
 
-  .qna-section {
-    flex-direction: column;
+/* 체크박스 */
+.calc-options {
+  margin-top: 1.5rem;
+  display: flex;
+  flex-direction: column; /* 위아래 배치 */
+  align-items: flex-start; /* 왼쪽 정렬 */
+  gap: 0.75rem;
+}
+
+.calc-options label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 1rem;
+  color: #333;
+  font-weight: 500;
+}
+
+.calc-options input[type="checkbox"] {
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #7e9260;
+  border-radius: 4px;
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 8px;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.2s ease;
+}
+
+.calc-options input[type="checkbox"]:checked {
+  background-color: #7e9260;
+  border-color: #7e9260;
+}
+
+.calc-options input[type="checkbox"]:checked::after {
+  content: "✔";
+  color: white;
+  font-size: 14px;
+  position: absolute;
+  top: 0.5px;
+  left: 3px;
+}
+
+/* 버튼 */
+.calc-toggle {
+  margin-top: 1.5rem;
+  display: flex;
+  justify-content: flex-start; /* 왼쪽 정렬 */
+  gap: 1rem;
+}
+
+.calc-toggle button {
+  border: 2px solid #7e9260;
+  background: transparent;
+  color: #7e9260;
+  font-weight: 600;
+  padding: 0.5rem 1.2rem;
+  border-radius: 8px;
+  cursor: pointer;
+  min-width: 120px;
+  text-align: center;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.calc-toggle button.active {
+  background: #7e9260;
+  color: white;
+  border: none;
+}
+
+/* 결과 */
+.calc-results {
+  width: 100%;
+  max-width: 600px;
+  background: #fbfffb;
+  border-radius: 1rem;
+  padding: 3rem;
+  text-align: center;
+}
+
+.calc-results h2 {
+  color: #7e9260;
+  margin-bottom: 2rem;
+}
+
+.calc-results p {
+  font-size: 1rem;
+  color: #333;
+  margin-bottom: 0.5rem;
+}
+
+/* 반응형 */
+@media (max-width: 900px) {
+  .calc-container {
     gap: 2rem;
+    padding: 0 1rem;
+  }
+  .calc-results, .calc-left {
+    width: 100%;
   }
 
-  .qna-intro,
-  .qna-list {
-    max-width: 100%;
-  }
-
-  .consulting-grid {
-    justify-content: flex-start;
-  }
-}
-
-.calculation {
-  padding: 4rem 1.5rem;
+  .calc-left h2 {
   text-align: center;
+  color: #7e9260;
+  margin-bottom: 2rem;
 }
 
-
-.step h3 { font-size: 1.5rem; margin-bottom: .5rem; }
-.site-footer {
-  padding: 2rem 1rem;
-  text-align: center;
-  background: #222;
-  color: #fff;
-  font-size: .9rem;
+  .calc-results h2 {
+  color: #7e9260;
+  margin-bottom: 2rem;
 }
-.site-footer a {
-  color: #00c1a3;
-  text-decoration: none;
 }
 
+/* ================================
+   Q&A Section
+================================ */
+/* ================================
+   Q&A Section
+================================ */
 .qna-section {
+  background: #fff;
+}
+
+.qna-section .section-container {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
   gap: 3rem;
   padding: 4rem 2rem;
-  background: #f9f7f1;
+  max-width: 1120px;
+  margin: 0 auto;
 }
 
+/* 왼쪽 소개 텍스트 */
 .qna-intro {
-  flex: 1;
-  max-width: 40%;
+  flex: 1 1 300px;
+  min-width: 300px;
+  text-align: left;
 }
 
-.qna-intro h2 {
-  font-size: 1.75rem;
-  margin-bottom: 1rem;
-}
-
-.qna-intro p {
-  font-size: 1rem;
-  color: #444;
-}
-
+/* 오른쪽 질문 리스트 */
 .qna-list {
-  flex: 1;
-  max-width: 50%;
+  flex: 2 1 450px;
+  max-width: 600px;
+  margin-top: 0;
 }
 
-/* details 스타일 */
 .qna-list details {
   border-bottom: 1px solid #ccc;
-  padding: 1rem 0;
+  margin-bottom: 0.75rem;
+  padding-bottom: 0.75rem;
+  transition: all 0.2s ease;
 }
 
-/* summary 스타일 */
 .qna-list summary {
   list-style: none;
   cursor: pointer;
@@ -300,40 +421,228 @@ body {
   align-items: center;
   font-weight: 600;
   color: #111;
+  font-size: 1rem;
+  padding: 1rem 0;
+  transition: color 0.2s ease;
 }
 
-/* 기본 삼각형 아이콘 */
+.qna-list summary:hover {
+  color: #7e9260;
+}
+
+/* 삼각형 아이콘 */
 .qna-list summary .arrow::before {
-  content: "▸";  /* 오른쪽을 향한 삼각형 */
-  font-size: 1rem;
-  color: #7E9260;
+  content: "▶";
+  display: inline-block;
+  margin-left: 8px;
+  font-size: 0.8rem;
+  color: #7e9260;
   transition: transform 0.2s ease;
 }
 
-/* 열렸을 때 아이콘 회전 */
+/* 열릴 때 회전 */
 .qna-list details[open] summary .arrow::before {
-  content: "▾";  /* 아래쪽을 향한 삼각형 */
-  transform: rotate(0deg);
+  transform: rotate(90deg);
 }
 
-/* 본문 */
+.qna-list .answer {
+  margin: 0;
+  padding: 0;
+}
+
 .qna-list p {
-  margin-top: 0.75rem;
+  margin: 0.75rem 0 0.5rem;
+  padding-left: 0.25rem;
   color: #333;
   font-size: 0.95rem;
+  line-height: 1.5;
 }
 
-/* 반응형 */
-@media (max-width: 768px) {
-  .qna-section {
+@media (max-width: 900px) {
+  .qna-section .section-container {
+    flex-direction: column; 
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1.5rem 1.25rem;
+  }
+
+  .qna-intro {
+    width: 100%;
+    min-width: unset; /* 또는 auto - 데스크톱 min-width 제거 */
+    flex: none; /* flex 속성 제거 */
+    margin-bottom: 0;
+  }
+
+  .qna-list {
+    width: 100%;
+    flex: none; /* flex 속성 제거 */
+    max-width: none; /* 600px 제한 제거 */
+    margin-top: 0;
+  }
+
+  .qna-list details {
+    margin-bottom: 0.5rem;
+    padding-bottom: 0.5rem;
+  }
+
+  .qna-list details:last-child {
+    margin-bottom: 0;
+  }
+
+  .qna-list summary {
+    padding: 0.75rem 0;
+    font-size: 0.95rem;
+  }
+
+  .qna-list p {
+    font-size: 0.9rem;
+    margin: 0.5rem 0 0;
+  }
+}
+
+
+/* ================================
+   Footer
+================================ */
+
+footer {
+  text-align: center;
+  padding: 1rem;
+  background: #343330;
+  color: rgba(255, 255, 255, 0.65);
+  font-size: 0.9rem;
+}
+
+/* ================================
+   Responsive Adjustments
+================================ */
+
+@media (max-width: 900px) {
+  .consulting-grid {
+    gap: 1.5rem;
+  }
+
+  .qna-section .section-container {
     flex-direction: column;
+    align-items: flex-start;
     gap: 2rem;
   }
 
-  .qna-intro,
-  .qna-list {
+  .qna-list, .qna-intro {
     max-width: 100%;
+    padding-left: 0;
+  }
+
+  #carbon-calculator .section-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .calc-left, .calc-right {
+    width: 100%;
+    text-align: left;
+  }
+
+  .calc-right {
+    margin-top: 1.5rem;
+  }
+}
+/* ================================
+   Value Proposition Two-Column Layout
+================================ */
+.value-prop {
+  background: #fff;
+  padding: 6rem 6rem;
+}
+
+.value-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1080px;
+  margin: 0 auto;
+  gap: 2rem;
+}
+
+.value-text {
+  flex: 1;
+  text-align: left;
+}
+
+.value-stats {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  width: 100%;
+  height: 100%;
+}
+
+.value-stats img {
+  width: 100%;
+  height: auto; 
+  max-width: 500px; 
+  object-fit: contain; 
+  display: block;
+}
+
+.stat {
+  text-align: center;
+}
+
+.stat .number {
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+  font-weight: 700;
+  color: #7e9260;
+}
+
+.stat .unit {
+  font-size: 1rem;
+  color: #555;
+  display: block;
+}
+
+.stat .desc {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+
+@media (max-width: 900px) {
+  .value-prop {
+    padding: 3rem 1.5rem; 
+  }
+
+  .value-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 2rem;
+  }
+
+  .value-text, 
+  .value-stats {
+    width: 100%;
   }
 }
 
 
+.video-wrapper {
+  display: flex;
+  justify-content: center;  
+  align-items: center;
+  width: 100%;
+  background: #f9f7f1;        
+  padding: 2rem 0;           
+}
+
+.video-wrapper video {
+  width: 85%;                 
+  height: auto;
+  max-width: 1280px;          
+  border-radius: 8px;
+  object-fit: contain;        
+  background: #f9f7f1;       
+  box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+}
