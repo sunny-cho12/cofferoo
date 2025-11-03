@@ -77,10 +77,12 @@ a:hover {
   z-index: 100;
 }
 
-.logo {
-  font-weight: 700;
-  font-size: 1.25rem;
-  color: #7e9260;
+
+
+.logo img {
+    height: 40px; /* 원하는 높이로 조정 */
+    width: auto;
+    display: block;
 }
 
 .contact-btn {
@@ -106,7 +108,7 @@ a:hover {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 600px;
+  min-height: 600px;
   background: rgba(255, 255, 255, 10);
   color: #7e9260;
   text-align: center;
@@ -123,14 +125,70 @@ a:hover {
   margin-bottom: 1.5rem;
 }
 
+.hero-content img {
+  max-width: 250px;
+  height: auto;
+  margin-bottom: 0.4rem;
+  transition: transform 0.3s ease;
+}
+
 .btn {
   display: inline-block;
   padding: 0.75rem 1.5rem;
-  background: #00c1a3;
+  background: #7e9260;
   color: #fff;
   text-decoration: none;
   border-radius: 0.5rem;
   font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.hero-content img.scrolled {
+  transform: scale(1.2);
+  transform: rotate('20');
+}
+
+
+
+.btn {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background: #7e9260;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  transition: background 0.3s ease;
+}
+
+.btn:hover {
+  background: #6a7d52;
+  transform: translateY(-2px);
+}
+
+/* 모바일 반응형 */
+@media (max-width: 768px) {
+  .hero-content img {
+    max-width: 200px; 
+  }
+  
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+  
+  .hero-content p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-content img {
+    max-width: 150px;
+  }
+  
+  .hero-content h1 {
+    font-size: 1.5rem;
+  }
 }
 
 /* ================================
@@ -205,7 +263,7 @@ a:hover {
 }
 
 #carbon-calculator {
-  background: #dfffef;
+  background: #ffffff;
   padding: 4rem 0;
 }
 
@@ -379,7 +437,7 @@ a:hover {
    Q&A Section
 ================================ */
 .qna-section {
-  background: #fff;
+  background:  #f9f7f1;
 }
 
 .qna-section .section-container {
@@ -509,7 +567,7 @@ footer {
   text-align: center;
   padding: 1rem;
   background: #343330;
-  color: rgba(255, 255, 255, 0.65);
+  color: rgb(255, 247, 247);
   font-size: 0.9rem;
 }
 

@@ -50,3 +50,15 @@ yearlyBtn.addEventListener("click", () => {
 });
 
 calculate();
+
+window.addEventListener('scroll', function() {
+  const cupImage = document.querySelector('.hero-content img');
+  const scrollPosition = window.scrollY;
+  
+
+  if (scrollPosition > 100) {
+    cupImage.classList.add('scrolled');
+  } else {
+    cupImage.classList.remove('scrolled');
+  }
+});
